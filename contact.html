@@ -28,15 +28,24 @@
         
         <hr>
 
-        <section id="contact-page" class="section contact-form">
+        <section id="contact-page" class="section contact-form" style="text-align: center;">
             <h3>✉️ Contactez-moi</h3>
-            <p>Vous souhaitez discuter de cybersécurité, d'opportunités d'alternance ou de mes projets ? Envoyez-moi un message directement via le formulaire ci-dessous ou utilisez mes réseaux sociaux.</p>
+            <p style="max-width: 500px; margin: 0 auto 30px;">
+                Vous souhaitez discuter de cybersécurité, d'opportunités d'alternance ou de mes projets ? Envoyez-moi un message via le formulaire ci-dessous.
+            </p>
 
-            <form action="mailto:stanyslas.lachaud@gmail.com" method="post" enctype="text/plain" class="contact-card">
+            <form action="https://formsubmit.co/stanyslas.lachaud@gmail.com" method="POST" class="contact-card">
+                
                 <div class="form-group">
                     <label for="name">Votre Nom :</label>
-                    <input type="text" id="name" name="Nom" required>
+                    <input type="text" id="name" name="Nom" required> 
                 </div>
+                
+                <div class="form-group">
+                    <label for="email">Votre E-mail :</label>
+                    <input type="email" id="email" name="Email" required>
+                </div>
+
                 <div class="form-group">
                     <label for="subject">Sujet :</label>
                     <input type="text" id="subject" name="Sujet" required>
@@ -52,9 +61,9 @@
             <div class="social-links-contact">
                 <h4>Ou retrouvez-moi ici :</h4>
                 <div class="links">
-                    <a href="https://www.linkedin.com/in/stanyslas-lachaud" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Night66fr" target="_blank">GitHub</a>
-                    <a href="mailto:stanyslas.lachaud@gmail.com">Email Direct</a>
+                    <a href="https://www.linkedin.com/in/stanyslas-lachaud" target="_blank">🔗 LinkedIn</a>
+                    <a href="https://github.com/Night66fr" target="_blank">💻 GitHub</a>
+                    <a href="mailto:stanyslas.lachaud@gmail.com">📧 Email Direct</a>
                 </div>
             </div>
         </section>
