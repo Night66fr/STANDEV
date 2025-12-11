@@ -1,0 +1,417 @@
+/* --- Variables et Thèmes --- */
+:root {
+    /* MODE SOMBRE PAR DÉFAUT */
+    --primary-color: #5d9cec; 
+    --text-color: #e5e5e5;
+    --background-color: #1a1a1a;
+    --card-background: #2d2d2d;
+    --border-color: #444;
+    --link-hover-color: #8ab4f8;
+    --tag-background: #3a3a3a;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+/* Thème clair (appliqué via la classe .light-theme) */
+.light-theme {
+    --primary-color: #007bff; 
+    --text-color: #333;
+    --background-color: #f9f9f9; 
+    --card-background: #ffffff;
+    --border-color: #eee;
+    --link-hover-color: #0056b3;
+    --tag-background: #e8e8e8;
+}
+
+/* --- Base et Réinitialisation --- */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s; /* Transition fluide */
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Titres */
+h1, h2, h3, h4 {
+    color: var(--text-color);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; margin-top: 2em; }
+h4 { font-size: 1.2em; }
+
+/* Liens */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Ligne de séparation */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 30px 0;
+}
+
+/* --- Header et Navigation --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header nav a {
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+/* Styles pour les contrôles de l'entête (Langue et Thème) */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+}
+
+.language-switch a {
+    font-size: 0.9em;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.language-switch a.active {
+    font-weight: bold;
+    opacity: 1;
+}
+
+/* --- Style du Bouton de Retour (pour contact.html) --- */
+.back-button {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--text-color); 
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--card-background);
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none; 
+}
+
+.back-button:hover {
+    background-color: var(--primary-color);
+    color: var(--card-background); 
+    border-color: var(--primary-color);
+}
+
+/* --- Sections --- */
+.section {
+    padding: 20px 0;
+}
+
+/* Liens de la bio (boutons/social) */
+.bio .links a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.bio .links a:hover {
+    background-color: var(--primary-color);
+    color: var(--card-background); 
+}
+
+/* --- Photo de Profil et Bio --- */
+.bio-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.bio-text {
+    flex-grow: 1;
+}
+
+.profile-photo {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    flex-shrink: 0;
+}
+
+/* --- Éducation et Projets (Cartes) --- */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card .date {
+    font-size: 0.9em;
+    color: #a0a0a0; 
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+/* --- Projets --- */
+.project-card {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.project-card:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.project-card h4 {
+    margin-bottom: 5px;
+}
+
+.project-card .description {
+    font-size: 0.95em;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: var(--tag-background);
+    color: var(--text-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.project-links a {
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.more-link {
+    margin-top: 20px;
+    text-align: right;
+    font-style: italic;
+}
+
+/* --- Blog --- */
+.blog-post {
+    margin-bottom: 15px;
+}
+
+.blog-post h4 {
+    margin-bottom: 5px;
+}
+
+.blog-post .metadata {
+    font-size: 0.85em;
+    color: #a0a0a0;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+
+/* --- Styles pour la Section Contact (utilisée dans contact.html) --- */
+
+.contact-form {
+    padding: 20px 0;
+}
+
+.contact-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Ajout de style pour centrer le formulaire sur la page de contact (optionnel) */
+    max-width: 550px; 
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--link-hover-color);
+}
+
+.social-links-contact h4 {
+    margin-top: 30px;
+    font-size: 1.2em;
+    text-align: center; /* Centrer le titre des liens sociaux */
+}
+
+.social-links-contact .links {
+    text-align: center; /* Centrer les liens sociaux */
+}
+
+.social-links-contact .links a {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+
+/* --- Responsive pour Mobile --- */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+
+    .header nav {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .header nav a {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .header-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Gestion de la photo de profil en mobile */
+    .bio-content {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .bio-text {
+        order: 2; 
+    }
+
+    .profile-photo {
+        order: 1; 
+        margin-bottom: 20px; 
+    }
+
+    /* Centre les liens de la bio en mobile */
+    .bio .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bio .links a {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .contact-card {
+        padding: 15px; /* Réduire le padding du formulaire sur mobile */
+    }
+}

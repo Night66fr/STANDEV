@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stan DEV - Contact</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="icon" href="image/favicon.png" type="image/png">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Stan DEV</h1>
+        <nav>
+            </nav>
+        <div class="header-controls">
+            <span class="language-switch">
+                <a href="contact.html" class="active">FR</a> | <a href="contact-en.html">EN</a>
+            </span>
+            <button id="theme-toggle">🌙</button> 
+        </div>
+    </header>
+
+    <main class="container">
+        <p style="margin-top: 30px;">
+            <a href="index.html" class="back-button">← Revenir au Portfolio</a>
+        </p>
+        
+        <hr>
+
+        <section id="contact-page" class="section contact-form">
+            <h3>✉️ Contactez-moi</h3>
+            <p>Vous souhaitez discuter de cybersécurité, d'opportunités d'alternance ou de mes projets ? Envoyez-moi un message directement via le formulaire ci-dessous ou utilisez mes réseaux sociaux.</p>
+
+            <form action="mailto:stanyslas.lachaud@gmail.com" method="post" enctype="text/plain" class="contact-card">
+                <div class="form-group">
+                    <label for="name">Votre Nom :</label>
+                    <input type="text" id="name" name="Nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="Sujet" required>
+                </div>
+                <div class="form-group">
+                    <label for="body">Votre Message :</label>
+                    <textarea id="body" name="Message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Envoyer le Message</button>
+            </form>
+
+            <div class="social-links-contact">
+                <h4>Ou retrouvez-moi ici :</h4>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/stanyslas-lachaud" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Night66fr" target="_blank">GitHub</a>
+                    <a href="mailto:stanyslas.lachaud@gmail.com">Email Direct</a>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/stanyslas-lachaud" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Night66fr" target="_blank">GitHub</a>
+            <a href="mailto:stanyslas.lachaud@gmail.com">Email</a>
+        </div>
+        <p>© 2025 Stanyslas Lachaud | Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
