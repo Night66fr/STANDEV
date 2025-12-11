@@ -284,13 +284,13 @@ hr {
 }
 
 .contact-card {
+    /* Encadrement du formulaire */
     background-color: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    /* Ajout de style pour centrer le formulaire sur la page de contact (optionnel) */
     max-width: 550px; 
     margin: 20px auto;
 }
@@ -308,6 +308,7 @@ hr {
 }
 
 .form-group input[type="text"],
+.form-group input[type="email"], /* SÉLECTEUR POUR LA NOUVELLE CASE E-MAIL */
 .form-group textarea {
     width: 100%;
     padding: 10px;
@@ -320,6 +321,7 @@ hr {
 }
 
 .form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus, /* SÉLECTEUR POUR LA NOUVELLE CASE E-MAIL AU FOCUS */
 .form-group textarea:focus {
     border-color: var(--primary-color);
     outline: none;
@@ -345,11 +347,11 @@ hr {
 .social-links-contact h4 {
     margin-top: 30px;
     font-size: 1.2em;
-    text-align: center; /* Centrer le titre des liens sociaux */
+    text-align: center;
 }
 
 .social-links-contact .links {
-    text-align: center; /* Centrer les liens sociaux */
+    text-align: center;
 }
 
 .social-links-contact .links a {
@@ -412,6 +414,6 @@ hr {
     }
 
     .contact-card {
-        padding: 15px; /* Réduire le padding du formulaire sur mobile */
+        padding: 15px;
     }
 }
