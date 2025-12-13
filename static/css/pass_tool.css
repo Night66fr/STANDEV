@@ -6,9 +6,7 @@ body {
     background-size: 40px 40px;
     
     /* CRITIQUE : Suppression du centrage Flexbox global pour laisser le HEADER monter */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    /* display: flex; align-items: center; justify-content: center; */
     
     min-height: 100vh;
     margin: 0;
@@ -16,14 +14,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Nouveau wrapper pour centrer l'application principale (le contenu du MAIN) */
-.container-wrapper {
+/* Nouveau style pour le conteneur principal de l'application (centré et limité en largeur) */
+.main-content-centered {
+    /* Largeur max pour s'aligner avec le header */
+    max-width: 650px; 
+    /* Marges auto pour centrer le contenu horizontalement */
+    margin: 20px auto; 
+    /* Padding pour l'espace sur les bords mobiles */
+    padding: 0 20px; 
+    
+    /* Permet le centrage vertical dans le cas où l'écran est très haut */
     display: flex;
-    justify-content: center; /* Centre horizontalement l'application */
-    align-items: flex-start; /* Aligne l'application en haut de l'espace restant */
-    width: 100%;
-    /* Ajout de padding pour éviter que le contenu ne touche le bas de l'écran si la fenêtre est grande */
-    padding: 20px 0; 
+    justify-content: center;
+    align-items: center;
 }
 
 /* Le conteneur générique utilisé par le HEADER pour aligner le bouton */
@@ -65,11 +68,11 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: 30px;
-    width: 90%;
-    max-width: 600px;
+    width: 100%; /* Doit prendre toute la largeur du main-content-centered */
+    max-width: 600px; /* Ajouté pour empêcher le card d'être trop large */
     text-align: center;
     box-sizing: border-box;
-    margin: 0; /* Important: enlève toute marge qui pourrait interférer avec le centrage du wrapper */
+    margin: 0 auto; /* Centrer le card DANS le main-content-centered */
 }
 
 /* --- Titres et Typographie --- */
