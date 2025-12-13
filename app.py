@@ -5,13 +5,28 @@ from utils import generate_password, analyze_password_strength
 app = Flask(__name__)
 
 # ====================================================================
-# 1. ROUTE DE LA PAGE D'ACCUEIL DU PORTFOLIO
-# Gère l'URL racine (https://standev.vercel.app/)
+# 1. ROUTES DU PORTFOLIO MULTILINGUE
 # ====================================================================
+
+# Route Accueil Français (FR) - Nom de fonction: portfolio_home_fr
 @app.route('/', methods=['GET']) 
-def portfolio_home():
-    # Flask cherche et rend templates/index.html
+def portfolio_home_fr():
     return render_template('index.html') 
+
+# Route Accueil Anglais (EN) - Nom de fonction: portfolio_home_en
+@app.route('/en', methods=['GET'])
+def portfolio_home_en():
+    return render_template('index-en.html')
+
+# Route Contact Français (FR) - Nom de fonction: contact_fr
+@app.route('/contact', methods=['GET']) 
+def contact_fr():
+    return render_template('contact.html')
+
+# Route Contact Anglais (EN) - Nom de fonction: contact_en
+@app.route('/contact-en', methods=['GET'])
+def contact_en():
+    return render_template('contact-en.html')
 
 # ====================================================================
 # 2. ROUTE DE L'OUTIL DE MOT DE PASSE
