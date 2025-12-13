@@ -4,6 +4,8 @@ from utils import generate_password, analyze_password_strength
 app = Flask(__name__)
 
 # Route pour la page principale de l'outil
+# Gère à la fois l'URL racine (/) et l'URL spécifique (/pass)
+@app.route('/', methods=['GET'])
 @app.route('/pass', methods=['GET'])
 def index():
     return render_template('pass.html') 
@@ -13,8 +15,8 @@ def index():
 def generate_api():
     length = request.args.get('length', type=int, default=12)
     
-    if length < 4:
-        length = 4
+    if length < 8: # Maintien de 8 comme minimum cohérent avec le front-end
+        length = 8
         
     password = generate_password(length) 
     
@@ -25,8 +27,7 @@ def generate_api():
 def analyze_api():
     pwd = request.args.get('password', type=str)
     
-    if not pwd or pwd.strip() == '': # S'assurer que le mot de passe n'est pas vide
-        # Retourner une réponse vide mais valide pour le front-end
+    if not pwd or pwd.strip() == '':
         return jsonify({
             'strength': 'Inconnu',
             'entropy': 0,
