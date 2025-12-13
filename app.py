@@ -1,32 +1,56 @@
 from flask import Flask, jsonify, request, render_template
-from utils import generate_password, analyze_password_strength
+# Assurez-vous que l'importation de utils fonctionne correctement
+from utils import generate_password, analyze_password_strength 
 
 app = Flask(__name__)
 
-# Route pour la page principale de l'outil
-# Gère à la fois l'URL racine (/) et l'URL spécifique (/pass)
-@app.route('/', methods=['GET'])
-@app.route('/pass', methods=['GET'])
-def index():
+# ====================================================================
+# 1. ROUTE DE LA PAGE D'ACCUEIL DU PORTFOLIO
+# Gère l'URL racine (https://standev.vercel.app/)
+# ====================================================================
+@app.route('/', methods=['GET']) 
+def portfolio_home():
+    # Flask cherche et rend templates/index.html
+    return render_template('index.html') 
+
+# ====================================================================
+# 2. ROUTE DE L'OUTIL DE MOT DE PASSE
+# Gère l'URL de l'outil (https://standev.vercel.app/pass)
+# ====================================================================
+@app.route('/pass', methods=['GET']) 
+def password_tool(): 
+    # Flask cherche et rend templates/pass.html
     return render_template('pass.html') 
 
-# API endpoint pour la génération de mot de passe
+# ====================================================================
+# 3. API ENDPOINT : GÉNÉRATION DE MOT DE PASSE
+# Gère l'appel JS à /api/generate
+# ====================================================================
 @app.route('/api/generate', methods=['GET'])
 def generate_api():
+    # Récupère la longueur demandée (défaut à 12)
     length = request.args.get('length', type=int, default=12)
     
-    if length < 8: # Maintien de 8 comme minimum cohérent avec le front-end
+    # S'assure d'une longueur minimale
+    if length < 8:
         length = 8
         
+    # Appelle la fonction de génération
     password = generate_password(length) 
     
+    # Retourne le mot de passe en JSON
     return jsonify({'password': password}) 
 
-# API endpoint pour l'analyse de mot de passe
+# ====================================================================
+# 4. API ENDPOINT : ANALYSE DE MOT DE PASSE
+# Gère l'appel JS à /api/analyze
+# ====================================================================
 @app.route('/api/analyze', methods=['GET'])
 def analyze_api():
+    # Récupère le mot de passe à analyser
     pwd = request.args.get('password', type=str)
     
+    # Gère le cas où le champ est vide
     if not pwd or pwd.strip() == '':
         return jsonify({
             'strength': 'Inconnu',
@@ -34,9 +58,15 @@ def analyze_api():
             'crack_time_display': 'N/A'
         })
         
+    # Appelle la fonction d'analyse
     results = analyze_password_strength(pwd)
     
+    # Retourne les résultats en JSON
     return jsonify(results)
 
+# ====================================================================
+# DÉMARRAGE DU SERVEUR
+# ====================================================================
 if __name__ == '__main__':
+    # Lance Flask en mode debug (utile pour les tests locaux)
     app.run(debug=True)
