@@ -307,3 +307,22 @@ button:hover {
         gap: 15px;
     }
 }
+
+.back-button {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--text-color); 
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--card-background);
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none; 
+}
+
+.back-button:hover {
+    background-color: var(--primary-color);
+    color: var(--card-background); 
+    border-color: var(--primary-color);
+}
