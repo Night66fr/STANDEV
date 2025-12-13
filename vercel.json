@@ -4,23 +4,11 @@
     {
       "src": "app.py",
       "use": "@vercel/python"
-    },
-    {
-        "src": "static/**",
-        "use": "@vercel/static"
-    },
-    {
-        "src": "templates/**",
-        "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "app.py"
-    },
-    {
-      "src": "/pass",
+      "src": "/(.*)",
       "dest": "app.py"
     }
   ]
