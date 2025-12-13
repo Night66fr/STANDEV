@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stan DEV</title>
-    <link rel="stylesheet" href="style/styles.css">
-    <link rel="icon" href="image/favicon.png" type="image/png">
-    <script src="script.js" defer></script>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
+    
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body class="dark-theme"> 
     <header class="header">
@@ -15,15 +18,16 @@
             <a href="#accueil">Accueil</a>
             <a href="#projets">Projets</a>
             <a href="#blog">Blog</a>
-            <a href="contact.html">Contact</a>
+            
+            <a href="{{ url_for('contact_fr') }}">Contact</a>
         </nav>
         
         <div class="header-controls">
             <span class="language-switch">
-                <a href="index.html" class="active">FR</a> | <a href="index-en.html">EN</a>
+                <a href="{{ url_for('portfolio_home_fr') }}" class="active">FR</a> | <a href="{{ url_for('portfolio_home_en') }}">EN</a>
             </span>
             <button id="theme-toggle">🌙</button> 
-            </div>
+        </div>
     </header>
 
     <main class="container">
@@ -35,14 +39,14 @@
                     <p>Future <strong>SOC analyste</strong> passionné par la <strong>Cybersécurité</strong>. J'aime subvenir à ma curiosité.</p>
 
                     <div class="links">
-                        <a href="image/CV_2025-12-07_Stanyslas_Lachaud.pdf" target="_blank">CV/Résumé</a>
+                        <a href="{{ url_for('static', filename='image/CV_2025-12-07_Stanyslas_Lachaud.pdf') }}" target="_blank">CV/Résumé</a>
                         <a href="https://www.linkedin.com/in/stanyslas-lachaud" target="_blank">LinkedIn</a>
                         <a href="https://github.com/Night66fr" target="_blank">GitHub</a>
                         <a href="mailto:stanyslas.lachaud@gmail.com">Email</a>
                     </div>
                 </div>
 
-                <img src="image/moi.png" alt="Photo de Stanyslas Lachaud" class="profile-photo">
+                <img src="{{ url_for('static', filename='image/moi.png') }}" alt="Photo de Stanyslas Lachaud" class="profile-photo">
             </div>
         </section>
         <hr>
@@ -74,7 +78,7 @@
                     <span>Web App</span>
                 </div>
                 <div class="project-actions">
-                    <a href="pass.html" class="btn btn-primary" target="_blank">Tester l'Outil Live</a>
+                    <a href="{{ url_for('password_tool') }}" class="btn btn-primary" target="_blank">Tester l'Outil Live</a>
                     <a href="[Lien Source Projet 1]" class="btn btn-github" target="_blank">Source (GitHub)</a>
                 </div>
             </div>
