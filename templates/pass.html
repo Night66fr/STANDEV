@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur et Analyseur de Mots de Passe Sûrs</title>
+    <link rel="stylesheet" href="../static/styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="card" id="app-container">
+        
+        <h1 class="title">Outil de Sécurité : Générateur & Analyseur</h1>
+        
+        <h2 class="section-title"><i class="fa-solid fa-key"></i> Générateur Sûr</h2>
+        
+        <div class="form-group-inline">
+            <label for="generate-length">Longueur (min. 8)</label>
+            <div class="length-control">
+                <button class="small-btn" onclick="adjustLength(-1)" aria-label="Diminuer la longueur"><i class="fa-solid fa-minus"></i></button>
+                <input type="number" id="generate-length" value="12" min="8" max="50" aria-label="Longueur du mot de passe à générer" readonly>
+                <button class="small-btn" onclick="adjustLength(1)" aria-label="Augmenter la longueur"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button onclick="handleGenerate()" class="submit-btn generate-btn"><i class="fa-solid fa-dice"></i> Générer</button>
+        </div>
+        
+        <div class="result-box">
+            <input type="text" id="generated-password" readonly placeholder="Cliquez sur 'Générer'" aria-label="Mot de passe généré">
+            <button onclick="copyToClipboard('generated-password')" class="submit-btn copy-btn"><i class="fa-solid fa-copy"></i> Copier</button>
+        </div>
+
+        <p id="copy-message" class="copy-success-message" aria-live="polite"></p> 
+
+        <hr class="separator">
+
+        <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i> Analyser votre Mot de Passe</h2>
+        
+        <div class="form-group">
+            <label for="test-password">Entrez un mot de passe à tester :</label>
+            <div class="input-with-clear">
+                <input type="text" id="test-password" oninput="handleAnalysis()" placeholder="Votre mot de passe..." aria-label="Champ pour entrer un mot de passe à analyser" autocomplete="off">
+                <button class="clear-input-btn" id="clear-test-password" onclick="clearTestPassword()" aria-label="Effacer le mot de passe saisi">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="analysis-results">
+            <p>Force : <strong id="strength-output" class="strength-unknown">?</strong></p>
+            <p>Entropie : <strong id="entropy-output">? bits</strong></p>
+            <p>Temps de Crackage Estimé : <strong id="time-output">?</strong></p>
+        </div>
+
+    </div>
+
+    <script src="../static/js/app_fetch.js"></script>
+</body>
+</html>

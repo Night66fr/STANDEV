@@ -1,6 +1,5 @@
 /* --- Variables et Thèmes --- */
 :root {
-    /* MODE SOMBRE PAR DÉFAUT */
     --primary-color: #5d9cec; 
     --text-color: #e5e5e5;
     --background-color: #1a1a1a;
@@ -11,7 +10,6 @@
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-/* Thème clair (appliqué via la classe .light-theme) */
 .light-theme {
     --primary-color: #007bff; 
     --text-color: #333;
@@ -30,17 +28,15 @@ body {
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s; /* Transition fluide */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Conteneur principal */
 .container {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Titres */
 h1, h2, h3, h4 {
     color: var(--text-color);
     margin-top: 0.5em;
@@ -52,7 +48,6 @@ h2 { font-size: 2em; }
 h3 { font-size: 1.5em; margin-top: 2em; }
 h4 { font-size: 1.2em; }
 
-/* Liens */
 a {
     color: var(--primary-color);
     text-decoration: none;
@@ -63,7 +58,6 @@ a:hover {
     color: var(--link-hover-color);
 }
 
-/* Ligne de séparation */
 hr {
     border: none;
     border-top: 1px solid var(--border-color);
@@ -87,7 +81,6 @@ hr {
     font-weight: 500;
 }
 
-/* Styles pour les contrôles de l'entête (Langue et Thème) */
 .header-controls {
     display: flex;
     align-items: center;
@@ -119,7 +112,6 @@ hr {
     opacity: 1;
 }
 
-/* --- Style du Bouton de Retour (pour contact.html) --- */
 .back-button {
     display: inline-block;
     font-size: 1em;
@@ -144,7 +136,6 @@ hr {
     padding: 20px 0;
 }
 
-/* Liens de la bio (boutons/social) */
 .bio .links a {
     display: inline-block;
     padding: 8px 15px;
@@ -247,6 +238,51 @@ hr {
     font-style: italic;
 }
 
+/* --- Styles pour les boutons d'action des projets --- */
+
+.project-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; 
+    justify-content: flex-start;
+}
+
+.project-actions .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #00bcd4; 
+    color: var(--card-background);
+    border: 1px solid #00bcd4;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7;
+    border-color: #0097a7;
+    color: var(--card-background);
+}
+
+.btn-github {
+    background-color: var(--tag-background);
+    color: var(--text-color);
+    border: 1px solid var(--tag-background);
+}
+
+.btn-github:hover {
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+
 /* --- Blog --- */
 .blog-post {
     margin-bottom: 15px;
@@ -277,14 +313,13 @@ hr {
 }
 
 
-/* --- Styles pour la Section Contact (utilisée dans contact.html) --- */
+/* --- Styles pour la Section Contact --- */
 
 .contact-form {
     padding: 20px 0;
 }
 
 .contact-card {
-    /* Encadrement du formulaire */
     background-color: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -308,7 +343,7 @@ hr {
 }
 
 .form-group input[type="text"],
-.form-group input[type="email"], /* SÉLECTEUR POUR LA NOUVELLE CASE E-MAIL */
+.form-group input[type="email"], 
 .form-group textarea {
     width: 100%;
     padding: 10px;
@@ -321,7 +356,7 @@ hr {
 }
 
 .form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus, /* SÉLECTEUR POUR LA NOUVELLE CASE E-MAIL AU FOCUS */
+.form-group input[type="email"]:focus, 
 .form-group textarea:focus {
     border-color: var(--primary-color);
     outline: none;
@@ -383,7 +418,6 @@ hr {
         justify-content: space-between;
     }
 
-    /* Gestion de la photo de profil en mobile */
     .bio-content {
         flex-direction: column; 
         align-items: center; 
@@ -399,7 +433,6 @@ hr {
         margin-bottom: 20px; 
     }
 
-    /* Centre les liens de la bio en mobile */
     .bio .links {
         display: flex;
         flex-direction: column;
@@ -411,6 +444,16 @@ hr {
         margin-bottom: 10px;
         width: 80%;
         text-align: center;
+    }
+    
+    .project-actions {
+        flex-direction: column; 
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .project-actions .btn {
+        width: 100%; 
     }
 
     .contact-card {

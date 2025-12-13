@@ -1,0 +1,309 @@
+/* --- Styles de Base et Palette de Couleurs Sobres --- */
+body {
+    /* Arrière-plan sombre et technique (Dark Grey/Black) */
+    background-color: #121212; 
+    background-image: radial-gradient(#3c3c3c 1px, transparent 0);
+    background-size: 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #f0f0f0; /* Texte clair par défaut */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Le Conteneur Principal (Glassmorphism) --- */
+.card {
+    /* Maintien de l'effet glassmorphism, mais plus transparent */
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5); /* Ombre pour la profondeur */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+/* --- Titres et Typographie --- */
+.title {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: #00bcd4; /* Accent Cyan technique */
+    text-shadow: none;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 1.6em; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #e0f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.section-title i {
+    color: #00bcd4; /* Accentuation Cyan pour les icônes */
+}
+
+/* --- Formulaires et Inputs --- */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #cfd8dc;
+    align-self: flex-start;
+}
+
+/* Layout pour le contrôle de la longueur et le bouton Générer */
+.form-group-inline {
+    display: grid;
+    /* Colonnes : Label | Contrôle Longueur/Plus/Moins | Bouton Générer */
+    grid-template-columns: 1fr 1.5fr auto; 
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-group-inline label {
+    align-self: center;
+    white-space: nowrap;
+    font-size: 1em;
+}
+
+/* Contrôle des boutons + et - */
+.length-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #e0f7fa;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 2px #00bcd4;
+}
+
+/* Cacher les flèches des inputs number */
+.length-control input {
+    width: 60px;
+    text-align: center;
+    -moz-appearance: textfield; 
+    appearance: textfield;
+}
+.length-control input::-webkit-outer-spin-button,
+.length-control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* --- Boutons --- */
+button {
+    background: #00bcd4; 
+    color: #121212; 
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #0097a7; 
+    box-shadow: 0 6px 15px rgba(0, 188, 212, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Boutons + et - (plus petits et ronds) */
+.small-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 1.2em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00bcd4;
+    color: #121212;
+    box-shadow: none;
+}
+.small-btn:hover {
+    background: #0097a7;
+    transform: none;
+}
+
+/* Bouton Générer doit avoir la même hauteur que le contrôle */
+.generate-btn {
+    height: 40px; 
+}
+
+
+.result-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+
+/* --- Séparateur --- */
+.separator {
+    border: none;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    margin: 40px 0;
+}
+
+/* --- Section des Résultats d'Analyse --- */
+#analysis-results {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#analysis-results p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+/* Couleurs pour la force du mot de passe (Feu tricolore de sécurité) */
+.strength-weak {
+    color: #ff5252 !important; /* Rouge pour Faible */
+    font-weight: bold;
+}
+.strength-medium {
+    color: #ffc107 !important; /* Jaune/Ambre pour Moyen */
+    font-weight: bold;
+}
+.strength-strong {
+    color: #4caf50 !important; /* Vert pour Fort */
+    font-weight: bold;
+}
+
+/* Message de Succès de Copie */
+.copy-success-message {
+    text-align: center;
+    color: #4caf50; 
+    font-weight: 500;
+    margin-top: 5px; 
+    height: 1.2em;
+    visibility: hidden; /* Caché par défaut */
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.copy-success-message.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- Styles pour le bouton Effacer (X) dans l'input --- */
+.input-with-clear {
+    position: relative;
+    width: 100%;
+}
+
+/* Le bouton Effacer (X) */
+.clear-input-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+    color: #cfd8dc;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    visibility: hidden; /* Géré par JS au début */
+    opacity: 0;
+}
+
+.clear-input-btn.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.clear-input-btn:hover {
+    color: #ff5252; /* Rouge pour indiquer l'action d'effacement */
+    background: transparent;
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+/* --- Ajustements Responsifs --- */
+@media (max-width: 550px) {
+    /* Sur mobile, on empile les éléments */
+    .form-group-inline {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .length-control {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .length-control input {
+        width: 40%;
+    }
+    .generate-btn {
+        width: 100%;
+    }
+    .form-group-inline label {
+        align-self: center;
+    }
+
+    .result-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
