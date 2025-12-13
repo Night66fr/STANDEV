@@ -4,7 +4,7 @@ from utils import generate_password, analyze_password_strength
 app = Flask(__name__)
 
 # Route pour la page principale de l'outil
-@app.route('/pass.html', methods=['GET'])
+@app.route('/pass', methods=['GET'])
 def index():
     return render_template('pass.html') 
 
