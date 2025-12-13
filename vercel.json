@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/pass",
+      "dest": "app.py"
+    },
+    {
+      "src": "/api/generate",
+      "dest": "app.py"
+    },
+    {
+      "src": "/api/analyze",
+      "dest": "app.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/templates/$1"
+    }
+  ]
+}
