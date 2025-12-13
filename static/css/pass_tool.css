@@ -4,16 +4,58 @@ body {
     background-color: #121212; 
     background-image: radial-gradient(#3c3c3c 1px, transparent 0);
     background-size: 40px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    /* CRITIQUE : Suppression du centrage Flexbox global pour laisser le HEADER monter */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    
     min-height: 100vh;
     margin: 0;
     color: #f0f0f0; /* Texte clair par défaut */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* --- Le Conteneur Principal (Glassmorphism) --- */
+/* Nouveau wrapper pour centrer l'application principale (le contenu du MAIN) */
+.container-wrapper {
+    display: flex;
+    justify-content: center; /* Centre horizontalement l'application */
+    align-items: flex-start; /* Aligne l'application en haut de l'espace restant */
+    width: 100%;
+    /* Ajout de padding pour éviter que le contenu ne touche le bas de l'écran si la fenêtre est grande */
+    padding: 20px 0; 
+}
+
+/* Le conteneur générique utilisé par le HEADER pour aligner le bouton */
+.container {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%; /* Assure qu'il prend toute la largeur disponible */
+}
+
+/* --- Styles spécifiques du Bouton de Retour --- */
+.back-button {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    color: #e0f0f0; /* Utilisation d'une couleur de texte claire */
+    padding: 8px 12px;
+    border: 1px solid #444; /* Bordure foncée */
+    border-radius: 5px;
+    background-color: #2d2d2d; /* Fond de carte sombre */
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none; 
+}
+
+.back-button:hover {
+    background-color: #00bcd4; /* Couleur primaire de l'outil */
+    color: #121212; /* Couleur du fond de l'outil (foncé) */
+    border-color: #00bcd4;
+}
+
+/* --- Le Conteneur Principal de l'Application (Glassmorphism) --- */
 .card {
     /* Maintien de l'effet glassmorphism, mais plus transparent */
     background: rgba(255, 255, 255, 0.05); 
@@ -27,7 +69,7 @@ body {
     max-width: 600px;
     text-align: center;
     box-sizing: border-box;
-    margin: 20px;
+    margin: 0; /* Important: enlève toute marge qui pourrait interférer avec le centrage du wrapper */
 }
 
 /* --- Titres et Typographie --- */
@@ -40,7 +82,7 @@ body {
 }
 
 .section-title {
-    font-size: 1.6em; 
+    font-size: 1.6em;  
     margin-top: 30px;
     margin-bottom: 20px;
     color: #e0f7fa;
@@ -75,7 +117,7 @@ body {
 .form-group-inline {
     display: grid;
     /* Colonnes : Label | Contrôle Longueur/Plus/Moins | Bouton Générer */
-    grid-template-columns: 1fr 1.5fr auto; 
+    grid-template-columns: 1fr 1.5fr auto;  
     gap: 15px;
     align-items: center;
     margin-bottom: 25px;
@@ -118,7 +160,7 @@ input[type="text"]:focus {
 .length-control input {
     width: 60px;
     text-align: center;
-    -moz-appearance: textfield; 
+    -moz-appearance: textfield;  
     appearance: textfield;
 }
 .length-control input::-webkit-outer-spin-button,
@@ -130,8 +172,8 @@ input[type="text"]:focus {
 
 /* --- Boutons --- */
 button {
-    background: #00bcd4; 
-    color: #121212; 
+    background: #00bcd4;  
+    color: #121212;  
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -147,7 +189,7 @@ button {
 }
 
 button:hover {
-    background: #0097a7; 
+    background: #0097a7;  
     box-shadow: 0 6px 15px rgba(0, 188, 212, 0.5);
     transform: translateY(-2px);
 }
@@ -173,7 +215,7 @@ button:hover {
 
 /* Bouton Générer doit avoir la même hauteur que le contrôle */
 .generate-btn {
-    height: 40px; 
+    height: 40px;  
 }
 
 
@@ -228,9 +270,9 @@ button:hover {
 /* Message de Succès de Copie */
 .copy-success-message {
     text-align: center;
-    color: #4caf50; 
+    color: #4caf50;  
     font-weight: 500;
-    margin-top: 5px; 
+    margin-top: 5px;  
     height: 1.2em;
     visibility: hidden; /* Caché par défaut */
     opacity: 0;
@@ -306,23 +348,4 @@ button:hover {
         flex-direction: column;
         gap: 15px;
     }
-}
-
-.back-button {
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-    color: var(--text-color); 
-    padding: 8px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--card-background);
-    transition: background-color 0.2s, color 0.2s;
-    text-decoration: none; 
-}
-
-.back-button:hover {
-    background-color: var(--primary-color);
-    color: var(--card-background); 
-    border-color: var(--primary-color);
 }
