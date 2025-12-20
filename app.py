@@ -93,3 +93,20 @@ def blog_portfolio():
 @app.route('/blog_password')
 def blog_password_tool():
     return render_template('blog_password.html')
+
+# Routes Anglaises
+@app.route('/en')
+def portfolio_home_en():
+    return render_template('index-en.html')
+
+@app.route('/en/password-tool')
+def password_tool_en():
+    return render_template('pass-en.html')
+
+@app.route('/en/blog/portfolio-build')
+def blog_portfolio_en():
+    return render_template('blog_portfolio_en.html')
+
+@app.route('/en/blog/password-security')
+def blog_password_tool_en():
+    return render_template('blog_password_en.html')

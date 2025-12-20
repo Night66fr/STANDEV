@@ -88,14 +88,21 @@
         <hr>
 
         <section id="blog" class="section blog">
-            <h3>Recent Posts</h3>
-            
-            <div class="blog-post">
-                <h4><a href="[Article 1 Link]">Creating a Presentation Portfolio</a></h4>
-                <p class="metadata">
-                    <span>HTML/CSS</span> | <span>December 11, 2025</span> | <span>5 min read</span>
-                </p>
-            </div>
+        <h3>Recent Articles</h3>
+        
+        <div class="blog-post">
+            <h4><a href="{{ url_for('blog_portfolio_en') }}">Building a Presentation Portfolio</a></h4>
+            <p class="metadata">
+                <span>HTML/CSS</span> | <span>Dec 11, 2025</span> | <span>5 min read</span>
+            </p>
+        </div>
+
+        <div class="blog-post">
+            <h4><a href="{{ url_for('blog_password_tool_en') }}">My Password Generator</a></h4>
+            <p class="metadata">
+                <span>Python / Flask</span> | <span>Dec 20, 2025</span> | <span>3 min read</span>
+            </p>
+        </div>
         </section>
     </main>
 

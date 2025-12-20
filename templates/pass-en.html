@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator & Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pass_tool.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container" style="max-width: 650px; margin: 0 auto; padding: 20px;">
+            <a href="{{ url_for('portfolio_home_en') }}" class="back-button">← Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main class="main-content-centered">
+        <div class="card" id="app-container">
+            <h1 class="title">Security Tool: Gen & Analyzer</h1>
+            
+            <h2 class="section-title"><i class="fa-solid fa-key"></i> Secure Generator</h2>
+            <div class="form-group-inline">
+                <label for="generate-length">Length (min. 8)</label>
+                <div class="length-control">
+                    <button class="small-btn" onclick="adjustLength(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="generate-length" value="12" readonly>
+                    <button class="small-btn" onclick="adjustLength(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <button onclick="handleGenerate()" class="submit-btn generate-btn"><i class="fa-solid fa-dice"></i> Generate</button>
+            </div>
+            
+            <div class="result-box">
+                <input type="text" id="generated-password" readonly placeholder="Click 'Generate'">
+                <button onclick="copyToClipboard('generated-password')" class="submit-btn copy-btn">Copy</button>
+            </div>
+            <p id="copy-message" class="copy-success-message"></p> 
+
+            <hr class="separator">
+
+            <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i> Analyze your Password</h2>
+            <div class="form-group">
+                <label for="test-password">Enter a password to test:</label>
+                <div class="input-with-clear">
+                    <input type="text" id="test-password" oninput="handleAnalysis()" placeholder="Your password..." autocomplete="off">
+                    <button class="clear-input-btn" id="clear-test-password" onclick="clearTestPassword()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            
+            <div id="analysis-results">
+                <p>Strength: <strong id="strength-output" class="strength-unknown">?</strong></p>
+                <p>Entropy: <strong id="entropy-output">? bits</strong></p>
+                <p>Estimated Crack Time: <strong id="time-output">?</strong></p>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/app_fetch.js') }}"></script>
+</body>
+</html>
