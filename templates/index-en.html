@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stan DEV</title>
-    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
@@ -18,7 +17,6 @@
             <a href="#blog">Blog</a>
             <a href="{{ url_for('contact_en') }}">Contact</a>
         </nav>
-        
         <div class="header-controls">
             <span class="language-switch">
                 <a href="{{ url_for('portfolio_home_fr') }}">FR</a> | <a href="{{ url_for('portfolio_home_en') }}" class="active">EN</a>
@@ -34,7 +32,6 @@
                     <h2>Hi! I'm Stanyslas.</h2>
                     <p>18 years old, student in <strong>Networks and Telecommunications (BUT)</strong> in Béziers [&#127467;&#127479;]</p>
                     <p>Future <strong>SOC Analyst</strong> passionate about <strong>Cybersecurity</strong>. I thrive on curiosity and continuous learning.</p>
-
                     <div class="links">
                         <a href="{{ url_for('static', filename='image/CV_2025-12-07_Stanyslas_Lachaud.pdf') }}" target="_blank">Resume</a>
                         <a href="https://www.linkedin.com/in/stanyslas-lachaud" target="_blank">LinkedIn</a>
@@ -42,7 +39,6 @@
                         <a href="mailto:stanyslas.lachaud@gmail.com">Email</a>
                     </div>
                 </div>
-
                 <img src="{{ url_for('static', filename='image/moi.png') }}" alt="Stanyslas Lachaud's Photo" class="profile-photo">
             </div>
         </section>
@@ -53,7 +49,7 @@
             <div class="card">
                 <h4>IUT de Béziers (University Institute of Technology)</h4>
                 <p class="date">September 2025 - July 2028</p>
-                <p><strong>Bachelor of Technology (BUT) in Networks and Telecommunications</strong></p>
+                <p><strong>Bachelor of Technology (BUT) in Networks and Telecommunications (3rd year)</strong></p>
                 <ul>
                     <li>Gaining expertise in Cybersecurity and network infrastructure management.</li>
                     <li>Developing projects in Python, database management, and virtualization.</li>
@@ -65,20 +61,17 @@
 
         <section id="projects" class="section projects">
             <h3>Featured Projects</h3>
-            
             <div class="project-card">
-                <h4>Secure Password Generator (Web App)</h4>
-                <p class="description">A tool developed to create and analyze highly secure passwords, demonstrating my understanding of complexity and cryptographic requirements.</p>
+                <h4>Secure Password Generator & Analyzer (Web App)</h4> 
+                <p class="description">A tool developed in Python/Flask to create and analyze password strength in real-time, integrating concepts of entropy and crack time.</p>
                 <div class="tags">
-                    <span>Python / Flask</span>
-                    <span>Security</span>
-                    <span>Web App</span>
+                    <span>Python / Flask</span><span>Cybersecurity</span><span>Web App</span>
                 </div>
                 <div class="project-links">
-                    <a href="{{ url_for('password_tool_en') }}" class="btn btn-primary">Test the Live Tool</a> 
+                    <a href="{{ url_for('password_tool_en') }}" class="btn btn-primary">Test the Live Tool</a>
                     <a href="https://github.com/Night66fr" target="_blank">Source (GitHub)</a>
                 </div>
-            </div>
+            </div>             
             <p class="more-link"><a href="https://github.com/Night66fr?tab=repositories" target="_blank">View more projects →</a></p>
         </section>
 
@@ -86,19 +79,13 @@
 
         <section id="blog" class="section blog">
             <h3>Recent Articles</h3>
-            
             <div class="blog-post">
                 <h4><a href="{{ url_for('blog_portfolio_en') }}">Building a Presentation Portfolio</a></h4>
-                <p class="metadata">
-                    <span>HTML/CSS</span> | <span>Dec 11, 2025</span> | <span>5 min read</span>
-                </p>
+                <p class="metadata"><span>HTML/CSS</span> | <span>Dec 11, 2025</span> | <span>5 min read</span></p>
             </div>
-
             <div class="blog-post">
                 <h4><a href="{{ url_for('blog_password_tool_en') }}">My Password Generator</a></h4>
-                <p class="metadata">
-                    <span>Python / Flask</span> | <span>Dec 20, 2025</span> | <span>3 min read</span>
-                </p>
+                <p class="metadata"><span>Python / Flask</span> | <span>Dec 20, 2025</span> | <span>3 min read</span></p>
             </div>
         </section>
     </main>
@@ -111,6 +98,5 @@
         </div>
         <p>© 2025 Stanyslas Lachaud | All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
