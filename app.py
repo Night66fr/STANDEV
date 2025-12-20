@@ -85,3 +85,11 @@ def analyze_api():
 if __name__ == '__main__':
     # Lance Flask en mode debug (utile pour les tests locaux)
     app.run(debug=True)
+
+@app.route('/blog/creation-portfolio')
+def blog_portfolio():
+    return render_template('blog_portfolio.html')
+
+@app.route('/blog/generateur-mot-de-passe')
+def blog_password_tool():
+    return render_template('blog_password.html')

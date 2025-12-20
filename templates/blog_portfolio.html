@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog : Construire un Portfolio avec Flask - StanDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pass_tool.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .post-body { text-align: left; line-height: 1.8; color: #e0f7fa; padding-bottom: 20px; }
+        .post-body h2 { color: #00bcd4; margin-top: 35px; border-bottom: 1px solid rgba(0, 188, 212, 0.2); padding-bottom: 10px; }
+        .post-body p { margin-bottom: 20px; }
+        .tech-tag { background: rgba(0, 188, 212, 0.1); color: #00bcd4; padding: 4px 10px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; border: 1px solid #00bcd4; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+            <a href="{{ url_for('portfolio_home_fr') }}" class="back-button">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="main-content-centered" style="max-width: 850px;">
+        <article class="card post-body">
+            <h1 class="title" style="text-align: left; font-size: 2.2em; margin-bottom: 10px;">Construire un Portfolio avec Flask : Allier Simplicité et Performance</h1>
+            
+            <div style="margin-bottom: 30px;">
+                <span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Vercel</span>
+                <span style="color: #cfd8dc; font-size: 0.9em; margin-left: 15px;">Publié le 11 Décembre 2025 • 5 min de lecture</span>
+            </div>
+
+            <p>Dans le monde du développement web, le portfolio est bien plus qu'une simple vitrine ; c'est le premier projet qu'un recruteur analyse. Pour ma propre plateforme, j'ai choisi de m'éloigner des solutions "clés en main" comme WordPress pour bâtir une architecture sur mesure avec <strong>Flask</strong>.</p>
+
+            
+
+            <h2>Pourquoi Flask ?</h2>
+            <p>Flask est un micro-framework Python qui privilégie la liberté. Contrairement à Django, il ne m'impose pas de structure rigide. Cela m'a permis de créer un routage propre et de gérer mon contenu de manière dynamique tout en gardant une application extrêmement légère et rapide à charger.</p>
+
+            <h2>Les défis du Frontend et du Design</h2>
+            <p>Pour le design, j'ai opté pour un style <strong>Glassmorphism</strong> sombre, qui reflète une identité technique et moderne. Le principal défi a été de rendre l'interface totalement <em>responsive</em>. J'ai utilisé les CSS Grid et Flexbox pour m'assurer que l'expérience utilisateur soit fluide, que ce soit sur un écran 27 pouces ou sur un smartphone.</p>
+
+            <h2>Déploiement et CI/CD</h2>
+            <p>Un développeur moderne doit savoir déployer. Mon portfolio est hébergé sur <strong>Vercel</strong>, avec un pipeline de déploiement continu lié à mon dépôt GitHub. Chaque "push" sur la branche principale déclenche automatiquement une mise à jour, garantissant que mon site est toujours synchronisé avec mes derniers travaux.</p>
+
+            <h2>Conclusion</h2>
+            <p>Ce projet n'est que la base. L'architecture Flask que j'ai mise en place me permettra d'ajouter facilement de nouvelles fonctionnalités, comme un système de commentaires ou une section "Lab" pour mes futures expérimentations techniques.</p>
+        </article>
+    </main>
+</body>
+</html>

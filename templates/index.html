@@ -89,20 +89,20 @@
 
         <section id="blog" class="section blog">
             <h3>Articles Récents</h3>
-            
-            <div class="blog-post">
-                <h4><a href="[Lien Article 1]">Création d'un portfolio de présentation</a></h4>
-                <p class="metadata">
-                    <span>HTML/CSS</span> | <span>11 Décembre 2025</span> | <span>5 min read</span>
-                </p>
-            </div>
+    
+        <div class="blog-post">
+            <h4><a href="{{ url_for('blog_portfolio') }}">Création d'un portfolio de présentation</a></h4>
+            <p class="metadata">
+                <span>HTML/CSS</span> | <span>11 Décembre 2025</span> | <span>5 min read</span>
+            </p>
+        </div>
 
-            <div class="blog-post">
-                <h4><a href="[Lien Article 2]">Mon script d'audit réseau minimal</a></h4>
-                <p class="metadata">
-                    <span>Python</span> | <span>11 Décembre 2025</span> | <span>3 min read</span>
-                </p>
-            </div>
+        <div class="blog-post">
+            <h4><a href="{{ url_for('blog_password_tool') }}">Mon Générateur de mot de passe</a></h4>
+            <p class="metadata">
+                <span>Python / Flask</span> | <span>20 Décembre 2025</span> | <span>3 min read</span>
+            </p>
+        </div>
         </section>
     </main>
 
